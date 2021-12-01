@@ -7,7 +7,7 @@ function [nodes, weights]= msg_quadrature(d, L, d_Gaussian, d_Uniform)
 % Note that d = d_Gaussian + d_Uniform
 
 
-%% Check if d = d_Gaussian + d_Uniform.
+% Check if d = d_Gaussian + d_Uniform.
 if d ~= d_Gaussian + d_Uniform
     disp('Sum of Gaussian rvs and Uniform rvs should be equal to d')
     error('Dimension Mismatch')
