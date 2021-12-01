@@ -14,4 +14,5 @@ d_Gaussian = 2;
 %% Input the number of Uniform random variables.
 d_Uniform = 0;
 
+%% Obtain the nodes and weights of mixed sparse grid quadrature
 [nodes, weights] = msg_quadrature(d, L, d_Gaussian, d_Uniform);

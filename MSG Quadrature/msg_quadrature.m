@@ -1,5 +1,4 @@
 function [nodes, weights]= msg_quadrature(d, L, d_Gaussian, d_Uniform)
-% msg_funcs contains all auxiliary functions required to compute MSG points
 % Generates nodes and weights of mixed sparse grid rule
 % Input: (i) d = dimension of uncertainty
 %        (ii) L = accuracy level       
