@@ -1,0 +1,29 @@
+function weight_nd = msg_product_weight (d, level_1d, order_1d, order_nd, vec_rules)
+% This function computes the weights of a mixed product rule.
+% Inputs: (i) d = dim
+%
+%    Input, integer DIM_NUM, the spatial dimension.
+%
+%    Input, integer ORDER_1D(DIM_NUM), the order of the 1D rules.
+%
+%    Input, integer ORDER_ND, the order of the product rule.
+%
+%
+%    Output, real WEIGHT_ND(ORDER_ND), the product rule weights.
+%
+  weight_nd(1:order_nd) = 1.0;
+
+  for dim = 1 : d
+
+    if ( vec_rules(dim) == 1 )
+      weight_1d = KPN_compute_weights (level_1d(dim));
+    elseif ( vec_rules(dim) == 2 )
+      weight_1d = KPU_compute_weights (level_1d(dim));
+    end
+
+    weight_nd = r8vec_direct_product2 ( dim, order_1d(dim), weight_1d, order_nd, weight_nd );
+
+  end
+
+  return
+end
